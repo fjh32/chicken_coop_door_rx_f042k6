@@ -48,7 +48,8 @@
 typedef enum
 {
     Open,
-    Closed
+    Closed,
+	Not_Init
 } DoorStatus_t;
 
 DoorStatus_t door_status, pending_door_status;
@@ -145,7 +146,7 @@ int main(void)
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
 
-	door_status = Closed;
+	door_status = Not_Init;
 	pending_door_status = Open;
 
 	nrf24l01p_rx_init(2576, _1Mbps);
